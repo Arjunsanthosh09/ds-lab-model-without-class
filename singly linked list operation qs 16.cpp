@@ -248,7 +248,7 @@ void main()
         obj.insertend(num);
         break;
     case 3:
-        cout<<"\n enter the position to be inserted : ";
+        cout<<"\n enter the key to be inserted : ";
         cin>>key;
         cout<<"\n enter the element to be inserted : ";
         cin>>num;
@@ -261,7 +261,7 @@ void main()
         obj.deleteend();
         break;
     case 6:
-        cout<<"\n enter the position to be deleted :";
+        cout<<"\n enter the node to be deleted :";
         cin>>num;
         obj.deleteintermediate(num);
         break;
