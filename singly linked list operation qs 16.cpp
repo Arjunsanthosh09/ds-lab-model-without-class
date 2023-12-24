@@ -169,28 +169,28 @@ void list::deleteend()
 
 void list::deleteintermediate(int key)
 {
-    if (head == nullptr)
+    if (head == NULL)
     {
         cout << "\n List is empty \n";
         return;
     }
 
     node *temp1 = head;
-    node *temp2 = nullptr;
+    node *temp2 = NULL;
 
-    while (temp1 != nullptr && temp1->data != key)
+    while (temp1 != NULL && temp1->data != key)
     {
         temp2 = temp1;
         temp1 = temp1->next;
     }
 
-    if (temp1 == nullptr)
+    if (temp1 == NULL)
     {
         cout << "\nKey not found. Deletion operation cannot be performed.\n";
         return;
     }
 
-    if (temp2 == nullptr)
+    if (temp2 == NULL)
     {
         head = temp1->next;
     }
@@ -232,7 +232,7 @@ void main()
     
    do
 {
-    cout << "\n1.Insertion at the beginning\n2. Insertion at end of the list\n3. Insertiona at intermediate\n4.Deletion at beginning\n5>Deletion at end\n6.Deletion at intermediate\n7. display\n8. exit\n";
+    cout << "\n1.Insertion at  beginning\n2. Insertion at end of the list\n3. Insertion at intermediate\n4.Deletion at beginning\n5>Deletion at end\n6.Deletion at intermediate\n7. display\n8. exit\n";
     cout << "\n Enter your choice: ";
     cin >> choice;
     switch (choice)
