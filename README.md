@@ -1,4 +1,3 @@
-# ds-lab-without-class-dosboxcode
 1) Write a menu driven program in C++ to perform Array operations such as Traversing,
 Insertion and Deletion.
 2) Write a C++ program to perform Polynomial Addition.
@@ -14,3 +13,12 @@ Insertion and Deletion.
 12) Write a C++ program to implement Queue operations using an array.
 13) Write a C++ program to implement Circular Queue using an array.
 14) Write a C++ program to perform Postfix Evaluation.
+15) Write a C++ program to perform Infix to Postfix conversion.
+16) Write a C++ program to perform operations on Singly Linked List.
+17) Write a C++ program to implement Linked Stack.
+18) Write a C++ program to implement Linked Queue.
+19) Write a C++ program to implement Circular Linked List.
+20) Write a C++ program to implement Doubly Linked List.
+21) Write a C++ program to implement Circular Doubly Linked List.
+22) Write a C++ program to arrange a Singly Linked List in ascending or descending order of
+the information field.
