@@ -22,3 +22,8 @@ Insertion and Deletion.
 21) Write a C++ program to implement Circular Doubly Linked List.
 22) Write a C++ program to arrange a Singly Linked List in ascending or descending order of
 the information field.
+23) Write a C++ program to concatenate two Singly Linked Lists.
+24) Write a C++ program to interchange any two nodes in a Singly Linked List.
+25) Write a C++ program to perform operations on Tree Datastructure.
+a) Create a Binary Search Tree of Integers.
+b) Traverse the above Binary Search tree recursively in Preorder, Inorder and Postorder.
