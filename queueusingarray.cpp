@@ -31,7 +31,7 @@ void main()
         
         if(rear==n-1)
         {
-           cout<<"\n stack underflow\n"; 
+           cout<<"\n queue is full\n"; 
         }
         else if(rear==-1&& front ==-1)
         {
@@ -49,7 +49,7 @@ void main()
         
         if(rear==-1 && front==-1)
         {
-            cout<<"\n stack is empty ";
+            cout<<"\n queue is empty ";
             
         }
         else if(rear==front)
@@ -68,11 +68,11 @@ void main()
         case 3:
         if(rear==-1 & front==-1)
         {
-            cout<<"\n stack is empty ";
+            cout<<"\n queue is empty ";
         }
         else
         {
-        cout<<"\n elements in the stack are :\n";
+        cout<<"\n elements in the queue are :\n";
         
         for(int i=front;i<rear+1;i++)
         {
