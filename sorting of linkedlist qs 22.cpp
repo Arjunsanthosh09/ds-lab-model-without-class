@@ -1,171 +1,171 @@
-#include<iostream.h>
+#include<iostream>
 #include<conio.h>
-#include<process.h>
+using namespace std;
 class node
 {
     public:
     int data;
     node *next;
-};
-class linkedlist
-{
     node *head;
-    public:
-    linkedlist()
+    node()
     {
         head=NULL;
-    };
+    }
     void insert(int item);
     void display();
-    void ascending();
-    void descending();
+    void ascending(int n);
+    void  decending(int n);
 };
-void linkedlist::insert(int item)
+
+void node::insert(int item)
 {
+    node *newnode=new node;
+    newnode->data=item;
     if(head==NULL)
     {
-        node *newnode=new node;
-        newnode->data=item;
-        newnode->next=NULL;
         head=newnode;
+        newnode->next=NULL;
         return;
     }
-    else
+    node *temp=head;
+    while(temp->next!=NULL)
     {
-        node *temp=head;
-        node *newnode=new node;
-        newnode->data=item;
-        while(temp->next!=NULL)
-        {
-            temp=temp->next;
-        }
-        newnode->next=NULL;
-        temp->next=newnode;
+        temp=temp->next;
         
     }
+    temp->next=newnode;
+    newnode->next=NULL;
+    
 }
 
-void linkedlist::display()
+void node::ascending(int n)
 {
+    node *temp;
+    node *dummy;
+    int item;
     if(head==NULL)
     {
-        cout<<"\n list is empty ......";
+        cout<<"\n list is empty..";
+        return;
+    }
+    if(head->next==NULL)
+    {
+        cout<<"\n only one node cannot perfrom sorting...";
+        return;
+    }
+    for(int i=0;i<n;i++)
+    {
+        temp=head;
+        while(temp->next!=NULL)
+        {
+            dummy=temp;
+            temp=temp->next;
+            if(temp->data < dummy->data)
+            {
+                item=temp->data;
+                temp->data=dummy->data;
+                dummy->data=item;
+                
+            }
+        }
+    }
+}
+
+void node::decending(int n)
+{
+    node *temp;
+    node *dummy;
+    int item;
+    if(head==NULL)
+    {
+        cout<<"\n list is empty..";
+        return;
+    }
+    if(head->next==NULL)
+    {
+        cout<<"\n only one node cannot perfrom sorting...";
+        return;
+    }
+    for(int i=0;i<n;i++)
+    {
+        temp=head;
+        while(temp->next!=NULL)
+        {
+            dummy=temp;
+            temp=temp->next;
+            if(temp->data > dummy->data)
+            {
+                item=temp->data;
+                temp->data=dummy->data;
+                dummy->data=item;
+                
+            }
+        }
+    }
+}
+void node::display()
+{
+    node *temp=head;
+    if(head==NULL)
+    {
+        cout<<"\n lsit is empty..";
         return;
     }
     else
     {
-        node *temp=head;
         while(temp!=NULL)
         {
-            cout<<temp->data<<"\t";
+            cout<<temp->data<<"\t\t";
             temp=temp->next;
         }
     }
+    
 }
-
-void linkedlist::ascending()
+int main()
 {
-    if (head == NULL || head->next == NULL)
+    node obj;
+    int num,choice,count=0;
+    do 
     {
-        cout << "\n list is empty...";
-        return;
-    }
-
-    bool swapped;
-    node *current;
-    node *nextNode = NULL;
-
-    do
-    {
-        swapped = false;
-        current = head;
-
-        while (current->next != nextNode)
-        {
-            if (current->data > current->next->data)
-            {
-                int temp = current->data;
-                current->data = current->next->data;
-                current->next->data = temp;
-                swapped = true;
-            }
-            current = current->next;
-        }
-        nextNode = current;
-
-    } while (swapped);
-}
-
-void linkedlist::descending()
-{
-    if (head == NULL || head->next == NULL)
-    {
-        cout << "\n list is empty...";
-        return;
-    }
-
-    bool swapped;
-    node *current;
-    node *nextNode = NULL;
-
-    do
-    {
-        swapped = false;
-        current = head;
-
-        while (current->next != nextNode)
-        {
-            if (current->data < current->next->data)
-            {
-                int temp = current->data;
-                current->data = current->next->data;
-                current->next->data = temp;
-                swapped = true;
-            }
-            current = current->next;
-        }
-        nextNode = current;
-
-    } while (swapped);
-}
-
-void main()
-{
-    linkedlist obj;
-    int num,choice;
-    clrscr();
-    do
-    {
-        cout<<"\n1.Linked list insertion \n2.list in ascending order\n3.list in descending order\n4.display\n5.exit\n\n";
-        cout<<"\n enter your choice :";
+        cout<<"\n1.insert\n2.ascending\n3.descending\n4.display\n5.exit";
+        cout<<"\n enter your chocie:";
         cin>>choice;
         switch(choice)
         {
             case 1:
-                 cout<<"\n enter the data :";
-                 cin>>num;
-                 obj.insert(num);
-                 break;
+            cout<<"\n enter your data :";
+            cin>>num;
+            obj.insert(num);
+            if(choice==1)
+            {
+                count++;
+            }
+            break;
             case 2:
-                obj.ascending();
-                cout<<"\n LIST IN ASCENDING ORDER IS :\n";
-                obj.display();
-                break;
+            obj.ascending(count);
+            cout<<"\n list after sorted in ascending order : \n";
+            obj.display();
+            break;
             case 3:
-                obj.descending();
-                cout<<"\n LIST IN DESCENDING ORDER IS :\n";
-                obj.display();
-                break;
+            obj.decending(count);
+            cout<<"\n list after sorted in decending order : \n";
+            obj.display();
+            break;
+            
             case 4:
-                 obj.display();
-                 break;
+            cout<<"\n elements in the list are :";
+            obj.display();
+            break;
             case 5:
-                 exit(0);
-                 break;
-            default:
-                 cout<<"\n invalid option";
-                 break;
+            exit(0);
+            break;
+            
         }
     }while(choice!=5);
-    getch();
+   
 }
+
+
+
+
+
