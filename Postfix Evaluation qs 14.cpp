@@ -5,7 +5,7 @@
 
 voi main()
 {
-    string postfix;
+    char postfix[20];
     char c;
     clrscr();
     int stack[20], i, top = 0;
@@ -13,7 +13,7 @@ voi main()
     cout << "\nEnter the postfix operation: ";
     cin >> postfix;
 
-    for (i = 0; i < postfix.length(); i++)
+    for (i = 0; postfix[i]!='\0'; i++)
     {
          
 
