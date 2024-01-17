@@ -1,44 +1,43 @@
 #include<iostream.h>
 #include<conio.h>
 #include<process.h>
-
 void quicksort(int a[20], int start, int end)
 {
     if (start < end)
     {
-        int pivot = start;
-        int i = start;
-        int j = end - 1;
+	int pivotindex =( start+end)/2;
+	int pivot=a[pivotindex];
+	int i = start;
+	int j = end ;
 
-        while (i < j)
-        {
-            while (a[i] <= a[pivot])
-            {
-                i++;
-            }
-            while (a[j] > a[pivot])
-            {
-                j--;
-            }
+	while (i <= j)
+	{
+	    while (a[i] <pivot)
+	    {
+		i++;
+	    }
+	    while (a[j] > pivot)
+	    {
+		j--;
+	    }
 
-            if (i < j)
-            {
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-            }
-        }
+	    if (i <= j)
+	    {
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+		i++;
+		j--;
+	    }
+	}
 
-        int temp = a[pivot];
-        a[pivot] = a[j];
-        a[j] = temp;
 
-        quicksort(a, start, j);
-        quicksort(a, j + 1, end);
+
+	quicksort(a, start, j);
+	quicksort(a, i, end);
     }
 }
-
-int main()
+void main()
 {
     int i, a[20], n;
 clrscr();
@@ -48,21 +47,21 @@ clrscr();
     cout << "\n Enter the elements into the array:\n";
     for (i = 0; i < n; i++)
     {
-        cin >> a[i];
+	cin >> a[i];
     }
 
     cout << "\n Elements before quicksort:\n";
     for (i = 0; i < n; i++)
     {
-        cout << a[i] << "\t";
+	cout << a[i] << "\t";
     }
 
     quicksort(a, 0, n - 1);
 
     cout << "\n\n Elements after quicksort:\n";
-    for (i = 0; i < n; i++)
+    for (i = 0; i <n; i++)
     {
-        cout << a[i] << "\t";
+	cout << a[i] << "\t";
     }
 
  getch();
